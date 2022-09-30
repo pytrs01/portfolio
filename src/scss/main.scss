@@ -1,0 +1,8 @@
+@use './Abstracts/fonts' as f;
+
+body {
+    margin: 0;
+    font-family: f.$noto-sans-symbol;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
