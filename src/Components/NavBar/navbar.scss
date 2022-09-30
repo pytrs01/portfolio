@@ -1,0 +1,28 @@
+@use '../../scss/Abstracts/colors' as c;
+
+.top-nav {
+    display: flex;
+    position: sticky;
+    top: 16px;
+    height: 81px;
+
+    .tab {
+        padding: 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-weight: 700;
+        font-size: 29.81px;
+        line-height: 36px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    #work {
+        border-bottom: 2px solid c.$black;
+        color: c.$black;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+}
