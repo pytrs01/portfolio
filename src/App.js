@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import useLocalStorage from 'use-local-storage';
 import NavBar from './components/NavBar/navbar';
 import Work from './pages/work';
@@ -7,7 +6,6 @@ import About from './pages/about';
 import Footer from './components/Footer/footer';
 import { Route, Routes } from 'react-router-dom';
 import './scss/main.scss'
-//import './App.css';
 
 function App() {
   const [theme, setTheme] = useLocalStorage('theme' ? 'light' : 'dark');
