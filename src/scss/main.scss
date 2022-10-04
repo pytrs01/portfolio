@@ -1,3 +1,4 @@
+@use './Abstracts/colors' as c;
 @use './Abstracts/fonts' as f;
 
 body {
@@ -5,4 +6,5 @@ body {
     font-family: f.$noto-sans-symbol;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
+    background-color: c.$white;
+}

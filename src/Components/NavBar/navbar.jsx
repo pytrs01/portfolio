@@ -1,23 +1,41 @@
 import React, {useState} from 'react';
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import './navbar.scss'
 
-function Header() {
-    const [isActive, setIsActive] = useState(false);
+export default function Navbar() {  
+    const [navbarActive, setNavbarActive] = useState(false);
     
-    
-    return (
-        <div className='top-nav'>
-            <p>Logo</p>
-            <div className='nav-links'>
-                <a className='tab' id='work'>Work</a>
-                <a className='tab'id='about'>About</a>
-                {/* <button className={`header-button`} id='work-button'>Work</button>
-                <button className={`header-button`} id='about-button'>About</button> */}
-            </div>
-        </div>
+    const addLine = () => {
+        if(window.scrollY >= 80) {
+            setNavbarActive(true);
+        }
+        else {
+            setNavbarActive(false);
+        }
+    }
 
-        
+    window.addEventListener('scroll', addLine)
+
+    return (
+        <>
+        <div className={`top-nav ${navbarActive ? 'active' : ''}` }>
+            <a href='#top'>Logo</a>
+            <ul>
+                <CustomLink to='/'>Work</CustomLink>
+                <CustomLink to='/about'>About</CustomLink>
+            </ul>
+        </div>   
+        </>
     )
 }
 
-export default Header;
+function CustomLink({ to, children, ...props}) {
+    const resolvedPath = useResolvedPath(to);
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true});
+
+    return (
+        <li className={isActive ? 'active' : 'disabled'}>
+            <Link to={to} {...props}>{children}</Link>
+        </li>
+    )
+}
