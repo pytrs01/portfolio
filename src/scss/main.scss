@@ -6,5 +6,68 @@ body {
     font-family: f.$noto-sans-symbol;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='dark'] {
+    background-color: c.$black;
+
+    .top-nav {
+        background-color: c.$black;
+        ul {
+            li {
+                &.active {
+                    border-bottom: 2px solid c.$green;
+                a {
+                    color: c.$green;
+                }
+                }
+                &.disabled { 
+                    a {
+                        color: c.$dark-grey;
+                    }
+                    :hover {
+                        color: c.$green;
+                    }
+                }
+    
+                :active {
+                    color: c.$dark-green !important;
+                }
+            }
+        }
+        #lightmode {
+            filter: invert(58%) sepia(17%) saturate(1176%) hue-rotate(76deg) brightness(98%) contrast(94%);        }
+    }
+}
+
+[data-theme='light'] {
     background-color: c.$white;
+    .top-nav {
+        background-color: c.$white;
+        ul {
+            li {
+                &.active {
+                    border-bottom: 2px solid c.$black;
+                a {
+                    color: c.$black;
+                }
+                }
+                &.disabled { 
+                    a {
+                        color: c.$grey;
+                    }
+                    :hover {
+                        color: c.$black;
+                    }
+                }
+    
+                :active {
+                    color: c.$green !important;
+                }
+            }
+        }
+        #darkmode {
+            filter: invert(21%) sepia(5%) saturate(412%) hue-rotate(71deg) brightness(91%) contrast(87%);
+        }
+    }
 }

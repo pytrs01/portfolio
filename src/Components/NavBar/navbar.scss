@@ -16,10 +16,21 @@
         box-shadow: 0 0 0 1px c.$dark-grey;
     }
 
+    .logo{
+        height: 40px;
+    }
+
+    .logo-img {
+        height: 44px;
+        width: 44px;
+        border-radius: 10px;
+    }
+
     ul {
         list-style: none;
         display: flex;
         gap: 2rem;
+        padding-left: 0px;
 
         li {
             a {
@@ -32,38 +43,16 @@
                 margin: 4px 2px;
                 cursor: pointer;
             }
-
-            &.active {
-                border-bottom: 2px solid c.$black;
-
-                a {
-                    color: c.$black;
-                }
-            }
-
-            &.disabled {
-                a {
-                    color: c.$grey;
-                }
-                :hover {
-                    color: c.$black;
-                }
-            }
-            :active {
-                color: c.$green !important;
-            }
         }
-
     }
-}
+    
+    .icon {
+        height: 25px;
+    }
 
-#nav-line{
-    height: 1px;
-    background-color: c.$dark-grey;
-    border: none;
-
-    &#hidden {
-        background-color: transparent;
+    #darkmode, #lightmode {
+        cursor: pointer;
+        width: 25px;
     }
 }
 

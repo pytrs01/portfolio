@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import useLocalStorage from 'use-local-storage';
 import NavBar from './components/NavBar/navbar';
 import Work from './pages/work';
 import About from './pages/about';
@@ -9,10 +10,16 @@ import './scss/main.scss'
 //import './App.css';
 
 function App() {
+  const [theme, setTheme] = useLocalStorage('theme' ? 'light' : 'dark');
+
+  const switchTheme = () => {
+      const newTheme = theme === 'light' ? 'dark' : 'light';
+      setTheme(newTheme);
+  }
   
   return (
-    <>
-    <NavBar/>
+    <div className='app' data-theme={theme}>
+    <NavBar switchTheme={switchTheme} theme={theme}/>
     <div className='container'>
       <Routes>
         <Route path='/' element={<Work />} />
@@ -20,7 +27,7 @@ function App() {
       </Routes>
     </div>
     <Footer/>
-    </>
+    </div>
   );
 }
 

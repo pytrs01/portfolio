@@ -1,9 +1,14 @@
 import React, {useState} from 'react';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import logo from '../../images/logo.PNG';
+import lightmode from '../../images/light-mode.svg';
+import darkmode from '../../images/moon.svg';
+import '../../scss/main.scss';
 import './navbar.scss'
 
-export default function Navbar() {  
+export default function Navbar(props) {  
     const [navbarActive, setNavbarActive] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
     
     const addLine = () => {
         if(window.scrollY >= 80) {
@@ -19,11 +24,12 @@ export default function Navbar() {
     return (
         <>
         <div className={`top-nav ${navbarActive ? 'active' : ''}` }>
-            <a href='#top'>Logo</a>
+            <a href='#top' className='logo'><img src={logo} className='logo-img'></img></a>
             <ul>
                 <CustomLink to='/'>Work</CustomLink>
                 <CustomLink to='/about'>About</CustomLink>
             </ul>
+            <i onClick={props.switchTheme} className="icon"><img src={props.theme === 'dark' ? lightmode : darkmode} alt={`${props.theme === 'dark' ? 'lightmode' : 'darkmode'} icon`} id={`${props.theme === 'dark' ? 'lightmode' : 'darkmode'}`}></img></i>
         </div>   
         </>
     )
