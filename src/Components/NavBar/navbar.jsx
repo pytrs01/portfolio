@@ -8,7 +8,6 @@ import './navbar.scss'
 
 export default function Navbar(props) {  
     const [navbarActive, setNavbarActive] = useState(false);
-    const [isDarkMode, setIsDarkMode] = useState(false);
     
     const addLine = () => {
         if(window.scrollY >= 80) {
@@ -24,7 +23,7 @@ export default function Navbar(props) {
     return (
         <>
         <div className={`top-nav ${navbarActive ? 'active' : ''}` }>
-            <a href='#top' className='logo'><img src={logo} className='logo-img'></img></a>
+            <a href='#top' className='logo'><img src={logo} alt='logo' className='logo-img'></img></a>
             <ul>
                 <CustomLink to='/'>Work</CustomLink>
                 <CustomLink to='/about'>About</CustomLink>

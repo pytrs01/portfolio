@@ -1,13 +1,12 @@
 @use '../../scss/Abstracts/colors' as c;
 
 .top-nav {
-    background-color: c.$white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0px;
-    height: 81px;
+    height: 80px;
     padding: 0 35px;
     box-shadow: none;
     transition: box-shadow 0.7s linear;
