@@ -10,7 +10,6 @@ function Footer() {
                 <div id='linked-in'><FaLinkedin size='1.5em'/></div>
                 <div id='envelope'><FaEnvelope size='1.5em'/></div>
             </div>
-
         </div>
     )
 }
