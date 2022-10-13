@@ -1,16 +1,24 @@
 import React from 'react';
+import './work.scss';
 
 function Work() {
     return (
-        <div>
-            <h1>Work Page</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis cras sed felis eget velit. Etiam erat velit scelerisque in dictum non consectetur a. Elit scelerisque mauris pellentesque pulvinar pellentesque. Tellus molestie nunc non blandit massa enim. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit. Amet porttitor eget dolor morbi non arcu risus quis. Aliquam purus sit amet luctus venenatis. Ut aliquam purus sit amet luctus. Ipsum nunc aliquet bibendum enim facilisis gravida. Blandit massa enim nec dui. Eget gravida cum sociis natoque penatibus et magnis. Gravida quis blandit turpis cursus in hac habitasse platea. Facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris. Integer feugiat scelerisque varius morbi enim. Vitae aliquet nec ullamcorper sit amet risus nullam eget felis. Sed faucibus turpis in eu mi bibendum neque. Vivamus arcu felis bibendum ut. Vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras.
+        <div className='work-container'>
+            <div className='intro row'> 
+            <div className='header'>
+                <p></p>
+            </div>
+            <div className='details'>
 
-Pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Mi eget mauris pharetra et ultrices neque ornare. Egestas integer eget aliquet nibh. Phasellus vestibulum lorem sed risus ultricies tristique. Suspendisse ultrices gravida dictum fusce ut. Nec feugiat in fermentum posuere urna nec tincidunt. Tempor commodo ullamcorper a lacus vestibulum sed. Diam maecenas sed enim ut sem viverra aliquet eget sit. Ut consequat semper viverra nam libero justo. Montes nascetur ridiculus mus mauris vitae ultricies. Sed augue lacus viverra vitae congue eu consequat ac felis. Porttitor rhoncus dolor purus non enim praesent. Nulla aliquet enim tortor at auctor urna nunc id. Malesuada proin libero nunc consequat. Ut sem viverra aliquet eget sit amet tellus. Nullam non nisi est sit amet. Cursus euismod quis viverra nibh. Ac felis donec et odio pellentesque diam volutpat commodo sed. Urna nec tincidunt praesent semper feugiat nibh.
+            </div>
 
-Pharetra vel turpis nunc eget lorem dolor sed. In eu mi bibendum neque egestas. Tortor condimentum lacinia quis vel. Gravida dictum fusce ut placerat orci. Nunc eget lorem dolor sed viverra ipsum. Facilisis gravida neque convallis a. Cursus turpis massa tincidunt dui ut ornare lectus sit. Aliquet nibh praesent tristique magna sit amet purus gravida. Egestas sed tempus urna et. Mauris augue neque gravida in fermentum et sollicitudin. Non diam phasellus vestibulum lorem. Velit egestas dui id ornare arcu odio. Sed egestas egestas fringilla phasellus. Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum.
-
-Dui ut ornare lectus sit amet est placerat. Duis convallis convallis tellus id interdum velit laoreet id. Rhoncus aenean vel elit scelerisque. Sit amet dictum sit amet justo donec enim. Viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est. Pellentesque id nibh tortor id aliquet lectus proin nibh nisl. Blandit libero volutpat sed cras ornare arcu dui. Id consectetur purus ut faucibus pulvinar elementum. Eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Tincidunt praesent semper feugiat nibh sed. Vel risus commodo viverra maecenas accumsan lacus vel facilisis. Id neque aliquam vestibulum morbi blandit cursus risus at ultrices. Ut tortor pretium viverra suspendisse potenti.</p>
+            </div>
+            <div className='gallery row'>
+                Works gallery goes here
+            </div>
+            <div className='skills row'>
+                Skills go here
+            </div>
         </div>
     );
 }

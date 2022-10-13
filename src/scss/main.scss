@@ -3,6 +3,7 @@
 
 html {
     height: 100%;
+
 }
 
 body {
@@ -12,9 +13,34 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
     min-height: 100%;
+    overscroll-behavior-y: none;
 
-    display: flex;
-    flex-direction: column;
+}
+
+h1 {
+    font-size: 39.81px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 29.81px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+
+    &.small {
+        font-size: 13.33px;
+        line-height: 16px;
+    }
+
+    &.large {
+        font-size: 19.2px;
+        line-height: 36px;
+    }
 }
 
 hr {
@@ -22,6 +48,12 @@ hr {
     background-color: c.$dark-grey;
     border: none;
 }
+
+.container {
+    padding: 0 35px;
+    
+}
+
 
 [data-theme='dark'] {
     background-color: c.$black;
@@ -87,5 +119,12 @@ hr {
         #darkmode {
             filter: invert(21%) sepia(5%) saturate(412%) hue-rotate(71deg) brightness(91%) contrast(87%);
         }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .container {
+        padding: 0 70px;
+        
     }
 }

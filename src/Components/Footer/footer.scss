@@ -7,13 +7,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
     border-top: 1px solid c.$dark-grey;
-
-    .footer-text {
-        font-size: 13.33px;
-        line-height: 16px;
-    }
 
     .social-icons {
         display: flex;
@@ -31,5 +26,12 @@
                 color: c.$green;
             }
         }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .footer {
+        padding: 0 70px;
+        
     }
 }
