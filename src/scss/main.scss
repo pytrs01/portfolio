@@ -11,8 +11,6 @@ body {
     font-family: f.$noto-sans-symbol;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    min-height: 100%;
     overscroll-behavior-y: none;
 
 }
@@ -54,7 +52,7 @@ hr {
 
 .container {
     padding: 0 35px;
-    
+    min-height: 100vh;
 }
 
 
