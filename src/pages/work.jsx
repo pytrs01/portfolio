@@ -5,10 +5,16 @@ function Work() {
     return (
         <div className='work-container'>
             <div className='intro row'> 
-            <div className='header'>
-                <p></p>
+            <div className='greeting'>
+                <h1>👋🏽 Hi! <br/> 
+                My name is <br/> 
+                Pablo Torres!</h1>
             </div>
             <div className='details'>
+                <p className='large'>
+                    👨🏽‍💻 Frontend Developer. <br/>
+                    📍 Based in ATX.
+                </p>
 
             </div>
 

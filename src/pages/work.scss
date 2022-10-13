@@ -3,10 +3,28 @@
     flex-direction: column;
 
     .intro {
-        
+        display: flex;
+        flex-direction: column;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
     }
 }
 
 .row {
     margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 700px) {
+    .intro {
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .details {
+        flex-direction: row !important;
+    }
 }
