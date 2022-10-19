@@ -1,4 +1,5 @@
 import React from 'react';
+import Skills from '../components/Skills/skills';
 import './work.scss';
 
 function Work() {
@@ -23,7 +24,7 @@ function Work() {
                 Works gallery goes here
             </div>
             <div className='skills row'>
-                Skills go here
+                <Skills/>
             </div>
         </div>
     );
