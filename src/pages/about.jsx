@@ -1,10 +1,14 @@
 import React from 'react';
 import pfp from '../images/pfp.jpg'
+import resume1 from '../images/Pablo_Torres_Resume-1.png'
+import resume2 from '../images/Pablo_Torres_Resume-2.png'
 import './about.scss';
 
 function About() {
     return (
         <div className='about-container'>
+
+        <div className='about-me-container'>
             <div className='img-container'><img src={pfp} alt='profile pic' className='profile-pic'></img></div>
             <div className='text-container'>
             <p className='heading large'>Hi! I'm Pablo!</p>
@@ -16,6 +20,8 @@ function About() {
             Please feel free to reach out to me! 
             </p>
             </div>
+        </div>
+        <div className='resume-container'><img src={resume1} alt='resume' className='resume-pic'></img></div>
         </div>
     );
 }

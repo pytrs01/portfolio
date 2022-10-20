@@ -1,35 +1,57 @@
 .about-container {
     margin-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 20px;
 
-    .img-container {
-        width: 75%;
-        .profile-pic {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10%;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .about-me-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .img-container {
+            width: 75%;
+            .profile-pic {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+
+        .text-container {
+            .heading {
+                font-weight: bold;
+            }
+
         }
     }
 
-    .text-container {
-        .heading {
-            font-weight: bold;
+    .resume-container {
+        width: 100%;
+        
+        .resume-pic {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
         }
-
     }
 }
 
 @media only screen and (min-width: 600px) {
-    .about-container {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 4rem;
+    .about-me-container {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 4rem !important;
 
         .img-container {
             width: 90%;
         }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .resume-container {
+        margin: 200px 0 0 0;
     }
 }
