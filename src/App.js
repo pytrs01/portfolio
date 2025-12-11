@@ -1,10 +1,8 @@
 import React from 'react';
 import useLocalStorage from 'use-local-storage';
-import NavBar from './components/NavBar/navbar';
-import Work from './pages/work';
-import About from './pages/about';
-import Footer from './components/Footer/footer';
-import { Route, Routes } from 'react-router-dom';
+import NavBar from './Components/NavBar/navbar';
+import Home from './pages/home';
+import Footer from './Components/Footer/footer';
 import './scss/main.scss'
 
 function App() {
@@ -19,10 +17,7 @@ function App() {
     <div className='app' data-theme={theme}>
     <NavBar switchTheme={switchTheme} theme={theme}/>
     <div className='container'>
-      <Routes>
-        <Route path='/' element={<Work />} />
-        <Route path='/about' element={<About />} />
-      </Routes>
+      <Home />
     </div>
     <Footer/>
     </div>

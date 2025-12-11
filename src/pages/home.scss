@@ -1,0 +1,22 @@
+@import '../scss/Abstracts/colors';
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  background: $white;
+}
+
+.home-container .intro h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: $black;
+}
+
+.home-container .intro .large {
+  font-size: 1.5rem;
+  color: $dark-grey;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import Skills from '../components/Skills/skills';
-import Gallery from '../components/Gallery/gallery';
+import Skills from '../Components/Skills/skills';
+import Gallery from '../Components/Gallery/gallery';
 import './work.scss';
 
 function Work() {

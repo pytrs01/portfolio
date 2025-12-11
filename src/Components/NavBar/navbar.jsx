@@ -25,8 +25,7 @@ export default function Navbar(props) {
         <div className={`top-nav ${navbarActive ? 'active' : ''}` }>
             <a href='#top' className='logo'><img src={logo} alt='logo' className='logo-img'></img></a>
             <ul>
-                <CustomLink to='/'>Work</CustomLink>
-                <CustomLink to='/about'>About</CustomLink>
+                {/* No links since only one page */}
             </ul>
             <i onClick={props.switchTheme} className="icon"><img src={props.theme === 'dark' ? lightmode : darkmode} alt={`${props.theme === 'dark' ? 'lightmode' : 'darkmode'} icon`} id={`${props.theme === 'dark' ? 'lightmode' : 'darkmode'}`}></img></i>
         </div>   
