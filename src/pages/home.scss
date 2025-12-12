@@ -28,7 +28,7 @@
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: $green;
-    background-color: inherit;
+    background-color: $black;
 
     @media (min-width: 1024px) {
         position: static;
@@ -45,6 +45,14 @@
             margin-left: 1rem;
             vertical-align: middle;
         }
+    }
+}
+
+[data-theme='light'] .section-heading {
+    background-color: $white;
+
+    @media (min-width: 1024px) {
+        background: transparent;
     }
 }
 
