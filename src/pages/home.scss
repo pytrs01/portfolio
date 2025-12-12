@@ -1,34 +1,296 @@
 @import '../scss/Abstracts/colors';
 
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 80vh;
-  text-align: center;
-  background: $white;
+.main-content {
+    width: 100%;
+    padding: 0 1.5rem 3rem;
+
+    @media (min-width: 1024px) {
+        margin-left: 40%;
+        max-width: 60%;
+        padding: 5rem 4rem;
+    }
 }
 
-.home-container .intro h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: $black;
+// Section styles
+.section {
+    margin-bottom: 5rem;
+    scroll-margin-top: 4rem;
 }
 
-.home-container .intro .large {
-  font-size: 1.5rem;
-  color: $dark-grey;
+.section-heading {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin: 0 0 1.5rem;
+    padding: 1rem 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: $green;
+    background-color: inherit;
+
+    @media (min-width: 1024px) {
+        position: static;
+        background: transparent;
+        padding: 0;
+        margin-bottom: 2rem;
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 50px;
+            height: 1px;
+            background-color: $dark-grey;
+            margin-left: 1rem;
+            vertical-align: middle;
+        }
+    }
 }
 
-[data-theme='dark'] .home-container {
-  background: $black;
+.section-content {
+    p {
+        margin: 0 0 1.25rem;
+        line-height: 1.75;
+        color: $dark-grey;
+        font-size: 0.95rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .highlight {
+        color: $white;
+        font-weight: 500;
+    }
 }
 
-[data-theme='dark'] .home-container .intro h1 {
-  color: $white;
+// Experience section
+.experience-item {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1.25rem 0;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba($dark-grey, 0.15);
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    @media (min-width: 600px) {
+        grid-template-columns: 120px 1fr;
+        gap: 2rem;
+    }
 }
 
-[data-theme='dark'] .home-container .intro .large {
-  color: $grey;
+.experience-date {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: $dark-grey;
+    padding-top: 0.2rem;
+}
+
+.experience-details {
+    .experience-title {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 0 0.75rem;
+        color: $white;
+        line-height: 1.4;
+    }
+
+    .company-name {
+        color: $green;
+    }
+
+    .experience-description {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: $dark-grey;
+        margin: 0 0 1rem;
+    }
+}
+
+// Tech tags
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        font-size: 0.7rem;
+        font-weight: 500;
+        padding: 0.3rem 0.65rem;
+        border: 1px solid rgba($green, 0.3);
+        border-radius: 3px;
+        color: $green;
+        letter-spacing: 0.02em;
+    }
+}
+
+// Resume link
+.resume-link {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+
+    a {
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: $white;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $green;
+        }
+    }
+}
+
+// Projects section (for future use)
+.project-item {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba($dark-grey, 0.15);
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    @media (min-width: 600px) {
+        grid-template-columns: 100px 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.project-image {
+    .project-placeholder {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-color: rgba($grey, 0.08);
+        border-radius: 3px;
+        border: 1px solid rgba($grey, 0.15);
+    }
+}
+
+.project-details {
+    .project-title {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0 0 0.5rem;
+    }
+
+    .project-link {
+        color: $white;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $green;
+        }
+
+        &::after {
+            content: ' ↗';
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: $dark-grey;
+        margin: 0 0 1rem;
+    }
+}
+
+// Footer
+.site-footer {
+    padding-top: 3rem;
+    margin-top: 2rem;
+
+    p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+        color: $dark-grey;
+        margin: 0;
+    }
+
+    a {
+        color: $dark-grey;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+
+        &:hover {
+            border-bottom-color: $green;
+        }
+    }
+}
+
+// Light theme overrides
+[data-theme='light'] {
+    .section-heading {
+        &::after {
+            background-color: $grey;
+        }
+    }
+
+    .section-content {
+        .highlight {
+            color: $black;
+        }
+    }
+
+    .experience-item {
+        border-bottom-color: rgba($black, 0.1);
+    }
+
+    .experience-details {
+        .experience-title {
+            color: $black;
+        }
+
+        .company-name {
+            color: $green;
+        }
+    }
+
+    .tech-tags li {
+        border-color: rgba($green, 0.4);
+        color: $green;
+    }
+
+    .project-item {
+        border-bottom-color: rgba($black, 0.1);
+    }
+
+    .project-details {
+        .project-link {
+            color: $black;
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+
+    .project-image .project-placeholder {
+        background-color: rgba($black, 0.04);
+        border-color: rgba($black, 0.1);
+    }
+
+    .resume-link a {
+        color: $black;
+
+        &:hover {
+            color: $green;
+        }
+    }
 }
