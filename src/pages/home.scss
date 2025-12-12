@@ -1,5 +1,17 @@
 @import '../scss/Abstracts/colors';
 
+// Staggered reveal animation
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .main-content {
     width: 100%;
     padding: 0 1.5rem 3rem;
@@ -15,6 +27,18 @@
 .section {
     margin-bottom: 5rem;
     scroll-margin-top: 4rem;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+
+    &:nth-of-type(1) {
+        animation-delay: 0.1s;
+    }
+    &:nth-of-type(2) {
+        animation-delay: 0.3s;
+    }
+    &:nth-of-type(3) {
+        animation-delay: 0.5s;
+    }
 }
 
 .section-heading {
@@ -27,8 +51,8 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: $green;
-    background-color: $black;
+    color: $accent;
+    background-color: $bg-primary;
 
     @media (min-width: 1024px) {
         position: static;
@@ -41,18 +65,10 @@
             display: inline-block;
             width: 50px;
             height: 1px;
-            background-color: $dark-grey;
+            background-color: $text-muted;
             margin-left: 1rem;
             vertical-align: middle;
         }
-    }
-}
-
-[data-theme='light'] .section-heading {
-    background-color: $white;
-
-    @media (min-width: 1024px) {
-        background: transparent;
     }
 }
 
@@ -60,7 +76,7 @@
     p {
         margin: 0 0 1.25rem;
         line-height: 1.75;
-        color: $dark-grey;
+        color: $text-secondary;
         font-size: 0.95rem;
 
         &:last-child {
@@ -69,7 +85,7 @@
     }
 
     .highlight {
-        color: $white;
+        color: $text-primary;
         font-weight: 500;
     }
 }
@@ -80,7 +96,7 @@
     gap: 0.5rem;
     padding: 1.25rem 0;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid rgba($dark-grey, 0.15);
+    border-bottom: 1px solid rgba($text-muted, 0.2);
 
     &:last-child {
         border-bottom: none;
@@ -96,7 +112,7 @@
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.02em;
-    color: $dark-grey;
+    color: $text-muted;
     padding-top: 0.2rem;
 }
 
@@ -105,18 +121,18 @@
         font-size: 1rem;
         font-weight: 500;
         margin: 0 0 0.75rem;
-        color: $white;
+        color: $text-primary;
         line-height: 1.4;
     }
 
     .company-name {
-        color: $green;
+        color: $accent;
     }
 
     .experience-description {
         font-size: 0.9rem;
         line-height: 1.7;
-        color: $dark-grey;
+        color: $text-secondary;
         margin: 0 0 1rem;
     }
 }
@@ -134,9 +150,9 @@
         font-size: 0.7rem;
         font-weight: 500;
         padding: 0.3rem 0.65rem;
-        border: 1px solid rgba($green, 0.3);
+        border: 1px solid rgba($accent, 0.3);
         border-radius: 3px;
-        color: $green;
+        color: $accent;
         letter-spacing: 0.02em;
     }
 }
@@ -150,71 +166,13 @@
         display: inline-block;
         font-size: 0.9rem;
         font-weight: 500;
-        color: $white;
+        color: $text-primary;
         text-decoration: none;
         transition: color 0.2s ease;
 
         &:hover {
-            color: $green;
+            color: $accent;
         }
-    }
-}
-
-// Projects section (for future use)
-.project-item {
-    display: grid;
-    gap: 1rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid rgba($dark-grey, 0.15);
-
-    &:last-child {
-        border-bottom: none;
-    }
-
-    @media (min-width: 600px) {
-        grid-template-columns: 100px 1fr;
-        gap: 1.5rem;
-    }
-}
-
-.project-image {
-    .project-placeholder {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background-color: rgba($grey, 0.08);
-        border-radius: 3px;
-        border: 1px solid rgba($grey, 0.15);
-    }
-}
-
-.project-details {
-    .project-title {
-        font-size: 1rem;
-        font-weight: 500;
-        margin: 0 0 0.5rem;
-    }
-
-    .project-link {
-        color: $white;
-        text-decoration: none;
-        transition: color 0.2s ease;
-
-        &:hover {
-            color: $green;
-        }
-
-        &::after {
-            content: ' ↗';
-            font-size: 0.8rem;
-            opacity: 0.7;
-        }
-    }
-
-    .project-description {
-        font-size: 0.9rem;
-        line-height: 1.7;
-        color: $dark-grey;
-        margin: 0 0 1rem;
     }
 }
 
@@ -226,79 +184,18 @@
     p {
         font-size: 0.8rem;
         line-height: 1.6;
-        color: $dark-grey;
+        color: $text-muted;
         margin: 0;
     }
 
     a {
-        color: $dark-grey;
+        color: $text-muted;
         text-decoration: none;
         border-bottom: 1px solid transparent;
         transition: border-color 0.2s ease;
 
         &:hover {
-            border-bottom-color: $green;
-        }
-    }
-}
-
-// Light theme overrides
-[data-theme='light'] {
-    .section-heading {
-        &::after {
-            background-color: $grey;
-        }
-    }
-
-    .section-content {
-        .highlight {
-            color: $black;
-        }
-    }
-
-    .experience-item {
-        border-bottom-color: rgba($black, 0.1);
-    }
-
-    .experience-details {
-        .experience-title {
-            color: $black;
-        }
-
-        .company-name {
-            color: $green;
-        }
-    }
-
-    .tech-tags li {
-        border-color: rgba($green, 0.4);
-        color: $green;
-    }
-
-    .project-item {
-        border-bottom-color: rgba($black, 0.1);
-    }
-
-    .project-details {
-        .project-link {
-            color: $black;
-
-            &:hover {
-                color: $green;
-            }
-        }
-    }
-
-    .project-image .project-placeholder {
-        background-color: rgba($black, 0.04);
-        border-color: rgba($black, 0.1);
-    }
-
-    .resume-link a {
-        color: $black;
-
-        &:hover {
-            color: $green;
+            border-bottom-color: $accent;
         }
     }
 }

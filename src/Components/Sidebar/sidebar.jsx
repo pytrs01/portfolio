@@ -8,7 +8,13 @@ function Sidebar() {
             <div className='sidebar-content'>
                 <div className='sidebar-header'>
                     <h1 className='name'>Pablo Torres</h1>
-                    <h2 className='title'>Software Engineer</h2>
+                    <h2 className='title'>
+                        {'Software Engineer'.split('').map((char, index) => (
+                            <span key={index} className='title-letter' style={{ animationDelay: `${index * 0.15}s` }}>
+                                {char === ' ' ? '\u00A0' : char}
+                            </span>
+                        ))}
+                    </h2>
                     <p className='tagline'>
                         I build scalable, user-friendly web applications
                         with modern frontend technologies.

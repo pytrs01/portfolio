@@ -1,30 +1,14 @@
 @import '../../scss/Abstracts/colors';
 
-// Floating animation keyframes
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
+// Letter-by-letter glow wave animation with pause
+@keyframes letterGlow {
+    0%, 30%, 100% {
+        color: $accent;
+        text-shadow: none;
     }
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-@keyframes breathe {
-    0%, 100% {
-        opacity: 0.6;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-@keyframes gentle-pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.02);
+    15% {
+        color: lighten($accent, 15%);
+        text-shadow: 0 0 8px rgba($accent, 0.8), 0 0 16px rgba($accent, 0.4);
     }
 }
 
@@ -63,8 +47,7 @@
         font-weight: 600;
         margin: 0 0 0.25rem 0;
         letter-spacing: -0.03em;
-        color: $white;
-        animation: float 6s ease-in-out infinite;
+        color: $text-primary;
 
         @media (min-width: 1024px) {
             font-size: 2.25rem;
@@ -75,20 +58,22 @@
         font-size: 0.9rem;
         font-weight: 400;
         margin: 0 0 1.5rem 0;
-        color: $green;
+        color: $accent;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        animation: breathe 4s ease-in-out infinite;
+
+        .title-letter {
+            display: inline-block;
+            animation: letterGlow 10s ease-in-out infinite;
+        }
     }
 
     .tagline {
         font-size: 0.95rem;
         line-height: 1.6;
-        color: $dark-grey;
+        color: $text-secondary;
         margin: 0;
         max-width: 280px;
-        animation: float 7s ease-in-out infinite;
-        animation-delay: 0.5s;
     }
 }
 
@@ -113,7 +98,7 @@
     a {
         display: inline-block;
         text-decoration: none;
-        color: $dark-grey;
+        color: $text-secondary;
         font-size: 0.85rem;
         font-weight: 500;
         padding: 0.4rem 0;
@@ -127,13 +112,13 @@
             bottom: 0.3rem;
             width: 0;
             height: 1px;
-            background-color: $green;
+            background-color: $accent;
             transition: width 0.2s ease;
         }
 
         &:hover,
         &.active {
-            color: $white;
+            color: $text-primary;
 
             &::before {
                 width: 100%;
@@ -153,49 +138,15 @@
 .sidebar-social {
     display: flex;
     gap: 1.5rem;
-    animation: float 8s ease-in-out infinite;
-    animation-delay: 1s;
 
     a {
-        color: $dark-grey;
+        color: $text-secondary;
         font-size: 1.25rem;
         transition: color 0.2s ease, transform 0.2s ease;
 
         &:hover {
-            color: $green;
+            color: $accent;
             transform: scale(1.1);
-        }
-    }
-}
-
-// Light theme overrides
-[data-theme='light'] {
-    .sidebar-header {
-        .name {
-            color: $black;
-        }
-        .title {
-            color: $green;
-        }
-        .tagline {
-            color: $dark-grey;
-        }
-    }
-
-    .sidebar-nav a {
-        color: $dark-grey;
-
-        &:hover,
-        &.active {
-            color: $black;
-        }
-    }
-
-    .sidebar-social a {
-        color: $dark-grey;
-
-        &:hover {
-            color: $green;
         }
     }
 }
