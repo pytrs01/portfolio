@@ -71,7 +71,6 @@ function Home() {
                             </p>
                             <ul className='tech-tags'>
                                 <li>Technical Support</li>
-                                <li>ITIL</li>
                                 <li>Documentation</li>
                             </ul>
                         </div>
